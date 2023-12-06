@@ -1,0 +1,55 @@
+html { overflow-x:hidden;
+ }
+::-webkit-scrollbar{
+    width: 0px; 
+  
+
+
+}
+
+body {
+    
+    
+
+}
+
+
+.imagen_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+  
+.thumbnail {
+  width: 30%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  border: 6px solid red;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.thumbnail img:active {
+
+border: solid 6px lime;
+filter: contrast(1.5);
+box-shadow: 10px -10px 5px 0px rgba(0,0,0,0.75);
+
+
+
+  
+
+
+}
+}
