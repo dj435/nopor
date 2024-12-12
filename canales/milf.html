@@ -37,10 +37,8 @@
                 mute: true        // Silencia el audio al inicio para evitar bloqueos en algunos navegadores
             });
 
-            // Después de 3 segundos, habilitar el sonido
-            setTimeout(function() {
-                player.setVolume(1);  // Establece el volumen al máximo
-            }, 100); // 3000 milisegundos (3 segundos)
+            // Activa el volumen después de que el reproductor se haya inicializado
+            player.setVolume(100);  // Establece el volumen al máximo
         </script>
     </div>
 </body>
