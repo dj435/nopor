@@ -41,10 +41,10 @@
                         var unmuteInterval = setInterval(function() {
                             // Verificamos si el reproductor ya está cargado
                             if (player.getCurrentTime() > 0) {
-                                player.setVolume(1);  // Activa el volumen al máximo
+                                player.setVolume(100);  // Activa el volumen al máximo
                                 clearInterval(unmuteInterval);  // Detenemos la verificación una vez que el volumen ha sido activado
                             }
-                        }, 100);  // Verifica cada 100 ms
+                        }, 1000);  // Verifica cada 100 ms
                     }
                 }
             });
