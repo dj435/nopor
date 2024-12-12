@@ -34,11 +34,20 @@
                 width: "100%", 
                 parentId: "#player", 
                 autoPlay: true,  // Activa la reproducción automática
-                mute: true        // Silencia el audio al inicio para evitar bloqueos en algunos navegadores
+                mute: true,      // Silencia el audio al inicio para evitar bloqueos en algunos navegadores
+                events: {
+                    onReady: function() {
+                        // Aseguramos que se active el sonido una vez que el reproductor esté listo
+                        var unmuteInterval = setInterval(function() {
+                            // Verificamos si el reproductor ya está cargado
+                            if (player.getCurrentTime() > 0) {
+                                player.setVolume(1);  // Activa el volumen al máximo
+                                clearInterval(unmuteInterval);  // Detenemos la verificación una vez que el volumen ha sido activado
+                            }
+                        }, 100);  // Verifica cada 100 ms
+                    }
+                }
             });
-
-            // Activa el volumen después de que el reproductor se haya inicializado
-            player.setVolume(100);  // Establece el volumen al máximo
         </script>
     </div>
 </body>
