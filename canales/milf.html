@@ -34,8 +34,29 @@
                 width: "100%", 
                 parentId: "#player", 
                 autoPlay: true,  // Activa la reproducción automática
+                
+            });
+
+            // Función para activar la pantalla completa automáticamente
+            function enterFullscreen() {
+                var playerElement = document.getElementById('player');
+                if (playerElement.requestFullscreen) {
+                    playerElement.requestFullscreen();
+                } else if (playerElement.mozRequestFullScreen) { // Firefox
+                    playerElement.mozRequestFullScreen();
+                } else if (playerElement.webkitRequestFullscreen) { // Chrome, Safari
+                    playerElement.webkitRequestFullscreen();
+                } else if (playerElement.msRequestFullscreen) { // IE/Edge
+                    playerElement.msRequestFullscreen();
+                }
+            }
+
+            // Llamar a la función de pantalla completa cuando el reproductor esté listo
+            player.on(Clappr.Events.PLAYER_READY, function() {
+                enterFullscreen();
             });
         </script>
     </div>
 </body>
 </html>
+
